@@ -15,14 +15,14 @@
       margin: 0;
       padding: 0;
     }
-    div.wrapper{
+    div.wrapper{  /* TODO: style의 .wrapper 보다 우선순위가 높아야지 적용되는가?*/
       margin: 50px 0;
     }
     .wrapper h1{
       font-size: 2rem;
     }
     ul, li, li a, ul label{
-      width: 100vw !important;
+      width: 100vw !important; /* TODO: style의 .wrapper 보다 우선순위가 높아야지 적용되는가?*/
       min-width: 270px;
     }
     }
@@ -74,7 +74,7 @@
       opacity: 0;
       height: 0;
       overflow: hidden;
-      transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out; /* TODO:부드럽게 복귀되려면?*/
     }
     input[type="checkbox"]:checked~ul{
       opacity:1;

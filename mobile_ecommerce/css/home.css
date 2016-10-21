@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  padding: 0; }
+
+.container {
+  position: relative; }
+
+.status-bar {
+  width: 640px;
+  height: 35px;
+  background: #548fae;
+  position: relative; }
+  .status-bar img {
+    position: absolute;
+    top: 50%;
+    right: 28px;
+    transform: translateY(-50%); }
+
+nav {
+  height: 86px;
+  background: #67b0d6; }
+
+/*# sourceMappingURL=../map/home.css.map */

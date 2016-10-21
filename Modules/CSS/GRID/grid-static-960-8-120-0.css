@@ -1,0 +1,142 @@
+/**
+ *  페이지 폭: 960px
+ *  컬럼 개수: 8
+ *  컬럼 폭: 120px
+ *  거터 폭: 0
+ */
+
+
+/**
+ * --------------------------------
+ * Module: Container
+ * ----------------------------- */
+
+.container {
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100px;
+}
+.container[class*="show-"]{
+  position: relative;
+}
+.container[class*="show-"]::before{
+  content:'';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  opacity: 0.3;
+}
+.container.show-grid::before{
+  background-image:linear-gradient(to bottom, transparent 9px, #388800 1px), linear-gradient(to right,transparent,#4ad9ff); /* 백그라운드 이미지로 2개의 리니어 그라디언트 이미지를 겹쳐서 사용 */
+  background-size: 1px 10px, 120px 1px; /*각각의 백그라운드 이미지에 대한 사이즈 설정*/
+}
+
+/*
+.container.show-baseline{
+  background-image: linear-gradient(to bottom, transparent 9px, #388800 1px); 위(투명) 9px에서 아래(초록)1px만큼 그라데이션 이미지
+  background-size: 1px 10px; 백그라운드 사이즈 : 가로 1px, 세로 10px
+}
+
+.container.show-columns{
+  background-image: linear-gradient(to right,transparent,#4ad9ff); 왼쪽(투명))에서 오른쪽(하늘색))으로 그라데이션 이미지
+  background-size: 120px 1px; 백그라운드  사이즈 : 가로 120px, 세로 1px
+}*/
+
+
+
+/**
+ * --------------------------------
+ * Module: Row
+ * ----------------------------- */
+.row::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.lt-ie8 .row { zoom: 1; }
+
+/**
+ * --------------------------------
+ * Module: Column
+ * ----------------------------- */
+[class*="col-"] { /*속성선택자 : class 속성중에 'col-' 문구가 들어있는 모든 요소를 선택 */
+  float: left;
+}
+
+.col-1 { width: 120px; }
+.col-2 { width: 240px; }
+.col-3 { width: 360px; }
+.col-4 { width: 480px; }
+.col-5 { width: 600px; }
+.col-6 { width: 720px; }
+.col-7 { width: 840px; }
+.col-8 { width: 960px; }
+
+/**
+ * --------------------------------
+ * Module: push, pull
+ * ----------------------------- */
+[class*="push-"],
+[class*="pull-"] {
+  position: relative;
+}
+
+.push-1 { left : 120px; }
+.push-2 { left : 240px; }
+.push-3 { left : 360px; }
+.push-4 { left : 480px; }
+.push-5 { left : 600px; }
+.push-6 { left : 720px; }
+.push-7 { left : 840px; }
+.push-8 { left : 960px; }
+
+.pull-1 { right: 120px; }
+.pull-2 { right: 240px; }
+.pull-3 { right: 360px; }
+.pull-4 { right: 480px; }
+.pull-5 { right: 600px; }
+.pull-6 { right: 720px; }
+.pull-7 { right: 840px; }
+.pull-8 { right: 960px; }
+
+/**
+ * --------------------------------
+ * Module: prefix, suffix
+ * ----------------------------- */
+.prefix-1 { margin-left : 120px; }
+.prefix-2 { margin-left : 240px; }
+.prefix-3 { margin-left : 360px; }
+.prefix-4 { margin-left : 480px; }
+.prefix-5 { margin-left : 600px; }
+.prefix-6 { margin-left : 720px; }
+.prefix-7 { margin-left : 840px; }
+.prefix-8 { margin-left : 960px; }
+
+.suffix-1 { margin-right: 120px; }
+.suffix-2 { margin-right: 240px; }
+.suffix-3 { margin-right: 360px; }
+.suffix-4 { margin-right: 480px; }
+.suffix-5 { margin-right: 600px; }
+.suffix-6 { margin-right: 720px; }
+.suffix-7 { margin-right: 840px; }
+.suffix-8 { margin-right: 960px; }
+
+/**
+* --------------------------------
+*isolate float
+* ----------------------------- */
+.box-isolate{
+  margin-right: -100%;
+}
+
+.isolate-order-1{margin-left: calc(120px*0);}
+.isolate-order-2{margin-left: calc(120px*1);}
+.isolate-order-3{margin-left: calc(120px*2);}
+.isolate-order-4{margin-left: calc(120px*3);}
+.isolate-order-5{margin-left: calc(120px*4);}
+.isolate-order-6{margin-left: calc(120px*5);}
+.isolate-order-7{margin-left: calc(120px*6);}
+.isolate-order-8{margin-left: calc(120px*7);}

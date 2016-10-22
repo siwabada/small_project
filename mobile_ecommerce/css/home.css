@@ -1,3 +1,14 @@
+@charset "UTF-8";
+/* 중앙정렬 */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.flex-centerY, nav {
+  display: flex;
+  align-items: center; }
+
 body {
   margin: 0;
   padding: 0; }
@@ -19,5 +30,12 @@ body {
 nav {
   height: 86px;
   background: #67b0d6; }
+  nav h1 {
+    position: relative; }
+  nav button {
+    width: 29px;
+    height: 25px;
+    border: none;
+    background: url(../images/home/icon-h-menu.png); }
 
 /*# sourceMappingURL=../map/home.css.map */

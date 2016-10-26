@@ -5,9 +5,13 @@
   justify-content: center;
   align-items: center; }
 
-.flex-centerY, nav {
+.flex-centerC, nav {
   display: flex;
   align-items: center; }
+
+.flex-centerM {
+  display: flex;
+  justify-content: center; }
 
 body {
   margin: 0;
@@ -31,11 +35,12 @@ nav {
   height: 86px;
   background: #67b0d6; }
   nav h1 {
-    position: relative; }
+    position: relative;
+    left: 100px; }
   nav button {
     width: 29px;
     height: 25px;
-    border: none;
-    background: url(../images/home/icon-h-menu.png); }
+    background: url(../images/home/icon-h-menu.png);
+    border: none; }
 
 /*# sourceMappingURL=../map/home.css.map */

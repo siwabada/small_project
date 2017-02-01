@@ -1,14 +1,10 @@
 <?php
-  // DB 서버에 접속한다. 결과값을 변수 $conn에 저장
-  $conn = mysqli_connect('localhost', 'siwabada', 'wakame12');
-  // 한글꺠짐 방지
-  mysqli_query($conn, 'set names utf8');
-  // DB 서버($conn)에서 접근할 DB(study 디렉토리))를 선택한다.
-  mysqli_select_db($conn, 'siwabada');
-
-  // DB 서버($conn)에서 조회할 테이블 (topic)의 모든 정보를 가져온다. 결과값을 $result 변수에 저장
-  $result = mysqli_query($conn, 'SELECT * FROM topic order by id desc');
- ?>
+require('config/config.php');
+require('lib/db.php');
+$conn = db_init($config['host'],$config['duser'],$config['dpw'],$config['dname']);
+// DB 서버($conn)에서 조회할 테이블 (topic)의 모든 정보를 가져온다. 결과값을 $result 변수에 저장
+$result = mysqli_query($conn, 'SELECT * FROM topic order by id desc');
+?>
 
 <!DOCTYPE html>
 <html>
@@ -62,5 +58,31 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="/bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
+
+<!-- textarea 내부 tab 입력   -->
+<script type="text/javascript">
+  document.querySelector("textarea").addEventListener('keydown',function(e) {
+  if(e.keyCode === 9) { // tab was pressed
+      // get caret position/selection
+      var start = this.selectionStart;
+      var end = this.selectionEnd;
+
+      var target = e.target;
+      var value = target.value;
+
+      // set textarea value to: text before caret + tab + text after caret
+      target.value = value.substring(0, start)
+                  + "\t"
+                  + value.substring(end);
+
+      // put caret at right position again (add one for the tab)
+      this.selectionStart = this.selectionEnd = start + 1;
+
+      // prevent the focus lose
+      e.preventDefault();
+  }
+  },false);
+</script>
+<div id="disqus_thread"></div>
 </body>
 </html>

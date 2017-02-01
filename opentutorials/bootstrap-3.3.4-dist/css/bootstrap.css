@@ -1452,9 +1452,9 @@ dd {
     width: 160px;
     overflow: hidden;
     clear: left;
-    text-align: right;
+    text-align:center;
     text-overflow: ellipsis;
-    white-space: nowrap;
+
   }
   .dl-horizontal dd {
     margin-left: 180px;
@@ -1929,7 +1929,7 @@ pre code {
 }
 @media (min-width: 992px) {
   .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
-    float: left;
+    /*float: left;*/
   }
   .col-md-12 {
     width: 100%;
@@ -1944,7 +1944,7 @@ pre code {
     width: 75%;
   }
   .col-md-8 {
-    width: 66.66666667%;
+    /*width: 66.66666667%;*/
   }
   .col-md-7 {
     width: 58.33333333%;
@@ -2455,7 +2455,7 @@ table th[class*="col-"] {
   .table-responsive > .table > thead > tr > td,
   .table-responsive > .table > tbody > tr > td,
   .table-responsive > .table > tfoot > tr > td {
-    white-space: nowrap;
+    /*white-space: nowrap;*/
   }
   .table-responsive > .table-bordered {
     border: 0;

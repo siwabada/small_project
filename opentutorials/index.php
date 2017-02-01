@@ -21,7 +21,7 @@
       var result = confirm('정말로 삭제 하시겠습니까?');
       if(result === true){
         alert('삭제완료')
-        location.replace("/process.php?mode=delete&id=<?=$_GET['id']?>"); //해당 url 페이지로 이동시킨다. 
+        location.replace("/process.php?mode=delete&id=<?=$_GET['id']?>"); //해당 url 페이지로 이동시킨다.
       }else{
         location.replace("/index.php?id=<?=$_GET['id']?>");
       }
@@ -78,7 +78,6 @@
         </div>
       </div>
       <a href="/modify.php?id=<?=$row['id']?>" class="btn btn-warning">modify</a>
-      <!-- <a href="/delete.php?id=<?=$row['id']?>" class="btn btn-danger">삭제</a> -->
       <a onclick="del_confirm()" class="btn btn-danger">delete</a>
       <div id="disqus_thread"></div>
     <?}?>

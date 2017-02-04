@@ -70,3 +70,8 @@ ul.nav{
   line-height: 1em;
   margin-left: 5px;
 }
+a[href="/index.php?id=94"],
+a[href="/index.php?id=102"]{
+  color: #FF7F66;
+  font-weight: bold;
+}

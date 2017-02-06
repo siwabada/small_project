@@ -42,17 +42,18 @@
             <td width="15%">created</td>
           </tr>
           <?php
-            $i = 1;
+            $i = mysqli_num_rows($result); //SELECT 문으로 가져온 데이터의 row 수를 가져온다.
             while($row = mysqli_fetch_assoc($result)){
           ?>
+          <!-- ($row['id']=94 || $row['id']=102) -->
             <tr>
-              <td width="5%"><?= $i?></td>
+              <td width="5%"><?php if($row['id']==='102' || $row['id']==='94'): echo '-'; else: echo $i; endif; ?></td>
               <!-- identifier를 통한 comment count fetch시에는 옆의 attribute를 a 링크에 포함시킴 data-disqus-identifier='<?=$row['id']?>' -->
               <td width="50%" class="table-title"><a href="/index.php?id=<?=$row['id']?>"><?=$row['title']?></a><span class="comment"><a href="/index.php?id=<?=$row['id']?>#disqus_thread"></a></span></td>
               <td width="10%"><?= $row['author']?></td>
               <td width="15%"><?= $row['created']?></td>
             </tr>
-          <?php $i = $i + 1; }?>
+          <?php $i = $i - 1; }?>
         </table>
       </div>
     <?}?>

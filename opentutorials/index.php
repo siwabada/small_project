@@ -24,7 +24,7 @@
     <div class="header clearfix">
       <nav>
         <ul class="nav nav-pills pull-right">
-          <li role="presentation" class="active"><a href="/write.php">write</a></li>
+          <li role="presentation" class="active"><a id="write_btn">write</a></li>
         </ul>
       </nav>
       <h3 class="text-muted"><a href="/index.php"><img src="/favicon.png" alt="로고" class="logo"><span class="title">몽키와 썬샤인의 영어공부</span></a></h3>
@@ -81,8 +81,21 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="/bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
 <script type="text/javascript">
+var write_btn = document.getElementById('write_btn');
+write_btn.addEventListener('click', function(){
+  if(prompt('비밀번호를 입력해 주세요.') != '1221'){
+    alert('비밀번호가 일치하지 않습니다.')
+    return;
+  }
+  location.replace("./write.php");
+})
+
   var del_btn = document.getElementById('del_btn');
   del_btn.addEventListener('click', function(){
+    if(prompt('비밀번호를 입력해 주세요.') != '1221'){
+      alert('비밀번호가 일치하지 않습니다.')
+      return;
+    }
     var result = confirm('정말로 삭제 하시겠습니까??');
     if(result === true){
       alert('삭제완료')
@@ -98,21 +111,6 @@
 /**
 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-
-/*
-var disqus_config = function () {
-this.page.url ="http://siwabada.dothome.co.kr/index.php?id=<?=$row['id']?>";
-// Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = '<?=$row['id']?>'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-*/
-// DON'T EDIT BELOW THIS LINE
-// n() {
-// var d = document, s = d.createElement('script');
-// s.src = '//monkey-sunshine.disqus.com/embed.js';
-// s.setAttribute('data-timestamp', +new Date());
-// (d.head || d.body).appendChild(s);
-// })();
 
 (function() { // DON'T EDIT BELOW THIS LINE
 var d = document, s = d.createElement('script');

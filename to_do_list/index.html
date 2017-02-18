@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>to do list</title>
+  </head>
+  <body>
+    <section class="basket">
+      <h3>내 할일 목록</h3>
+      <ol>
+        <li><div class="basket-text">씻기</div> <a href="#" class="button-close">닫기</a></li>
+        <li><div class="basket-text">공부하기</div> <a href="#" class="button-close">닫기</a></li>
+        <li><div class="basket-text">게임한판하기</div> <a href="#" class="button-close">닫기</a></li>
+        <li><div class="basket-text">html공부하기</div> <a href="#" class="button-close">닫기</a></li>
+        <li><div class="basket-text">자바스크립트 책 사기</div> <a href="#" class="button-close">닫기</a></li>
+      </ol>
+    </section>
+    <script type="text/javascript">
+      var ol = document.querySelector("ol");
+      ol.addEventListener("click", deleteButton);
+
+      function deleteButton(event) {
+        var eTarget = event.target.tagName.toLowerCase();
+        if( eTarget !== "a" ) {
+            return;
+        }
+        var liTarget = event.target.parentNode;
+            liTarget.remove();
+        console.log(liTarget);
+      }
+    </script>
+  </body>
+</html>
